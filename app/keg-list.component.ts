@@ -23,6 +23,8 @@ import { LowPipe } from './low.pipe';
   *ngFor="#currentKeg of kegList | low: filterLow"
   (click)="kegClicked(currentKeg)"
 	[class.selected]="currentKeg === selectedKeg"
+  [class.highAlcoholContent]="currentKeg.alcoholContent > 0.0475"
+  [class.expensive]="currentKeg.price > 3.25"
   [keg]="currentKeg">
   </keg-display>
 

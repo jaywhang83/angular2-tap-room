@@ -1,3 +1,11 @@
 h1 {
-  color: blue; 
+  color: blue;
+}
+
+.highAlcoholContent{
+  color: red;
+}
+
+.expensive{
+  font-weight: bold;
 }
