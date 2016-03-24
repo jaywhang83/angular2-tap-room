@@ -31,7 +31,7 @@ export class NewKegComponent{
       "name": name.value,
       "brand": brand.value,
       "price": parseInt(price.value),
-      "alcoholContent": parseInt(alcoholContent.value) / 100; 
+      "alcoholContent": parseInt(alcoholContent.value) / 100;
     });
 
     // console.log("emit", this.onSubmitNewKeg['name']);
