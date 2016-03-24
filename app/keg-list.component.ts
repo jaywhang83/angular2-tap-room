@@ -3,13 +3,13 @@ import { KegComponent } from './keg.component';
 import { Keg } from './keg.model';
 import { NewKegComponent } from './new-keg.component';
 import { EditKegComponent } from './edit-keg.component';
-
+import { DecreaseVolumeComponent } from './decrease-volume.component';
 @Component({
   selector: 'keg-list',
   inputs: ['kegList'],
   //outputs:['onKegSelect'],
   //pipes:
-  directives: [KegComponent, NewKegComponent, EditKegComponent],
+  directives: [KegComponent, NewKegComponent, EditKegComponent, DecreaseVolumeComponent],
   template:`
   <keg-display
   *ngFor="#currentKeg of kegList"
@@ -21,6 +21,7 @@ import { EditKegComponent } from './edit-keg.component';
   <new-keg (onSubmitNewKeg)="createKeg($event)"></new-keg>
 
   <edit-keg *ngIf="selectedKeg" [keg]="selectedKeg"></edit-keg>
+  <decrease-keg *ngIf="selectedKeg" [keg]="selectedKeg"></decrease-keg>
   `
 })
 
@@ -37,6 +38,7 @@ export class KegListComponent {
     console.log('CHILD', clickedKeg);
     this.selectedKeg = clickedKeg;
     this.onKegSelect.emit(clickedKeg);
+    // console.log("this" this.selectedKeg);
   }
 
   createKeg(keg: Object): void {
@@ -45,4 +47,5 @@ export class KegListComponent {
     );
     console.log("kegList", this.kegList);
   }
+
 }
