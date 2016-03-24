@@ -7,7 +7,7 @@ import {Keg} from './keg.model';
   template:`
   <div>
     <ul>
-      <li>{{ keg.name}}-AC{{ keg.alcoholContent}}- {{keg.price}}</li>
+      <li>{{ keg.name}}-AC{{ keg.alcoholContent | percent:'.2'}}- {{keg.price | currency:"USD":true:"1.2-4"}}</li>
     </ul>
   <div>
   `

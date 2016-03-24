@@ -9,7 +9,9 @@ import { Keg } from './keg.model';
   template: `
   <div class="container">
     <h1>Keg List</h1>
-    <keg-list [kegList]="kegs"></keg-list>
+    <keg-list [kegList]="kegs"
+    (onKegSelect)="kegWasSelected($event)">
+    </keg-list>
   </div>
   ` //uses backticks
 })
